@@ -62,7 +62,7 @@ class SendConnectRequestFragment extends SingleParticipantFragment {
           else
             Signal.const(Option.empty[ConversationRole])
 
-        val adapter = new UnconnectedParticipantAdapter(user.id, isGuest, isExternal, isDarkTheme, isGroup, isWireless, user.displayName, formattedHandle)
+        val adapter = new UnconnectedParticipantAdapter(user.id, isGuest, isExternal, isDarkTheme, isGroup, isWireless, user.name, formattedHandle)
         subs += Signal(timerText, participantRole, selfRole).onUi {
           case (tt, pRole, sRole) => adapter.set(tt, pRole, sRole)
         }
